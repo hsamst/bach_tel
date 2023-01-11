@@ -1,10 +1,12 @@
 <?php
-    require_once('mdlCambio.php');
+    require_once('mdlDiadema.php');
+    require_once('../marca/mdlMarca.php');
+
     //$sistema -> validarRol('Administrador');
-    $id_cambio = NULL;
+    $id_diadema = NULL;
     $accion = NULL;
     if(isset($_GET['accion'])){
-        $id_cambio = isset($_GET['id_cambio']) ? $_GET['id_cambio'] : NULL;
+        $id_diadema = isset($_GET['id_diadema']) ? $_GET['id_diadema'] : NULL;
         $accion = $_GET['accion'];
     }
 
@@ -14,65 +16,63 @@
         
          //////////////////////////////////////// Caso read One ////////////////////////////////////////
         case 'readOne':
-            $datosCambio = $cambio->readOne($id_cambio);
-            if(is_array($datosCambio)){
-                require_once('views/cambios/vistaCambio.php');
+            $datosDiadema = $diadema->readOne($id_diadema);
+            if(is_array($datosDiadema)){
+                require_once('views/diadema/vistaDiadema.php');
             } else{
-                $cambio->message(0,"Ocurrio un error, el Cambio no exixte");
-                require_once('formCambio.php');
+                $diadema->message(0,"Ocurrio un error, la diadema no exixte");
+                require_once('formDiadema.php');
             }
         break;
 
 
         //////////////////////////////////////// Caso New ////////////////////////////////////////
         case 'new':
-            require_once('formCambio.php');
+            $datosMarca = $marca->read();
+            require_once('formDiadema.php');
         break;
 
         //////////////////////////////////////// Caso add ////////////////////////////////////////
         case 'add':
-            $datosCambio = $_POST;
-            $resultado = $cambio->create($datosCambio);
+            $datosDiadema = $_POST;
+            $resultado = $diadema->create($datosDiadema);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se agrego correctamente": "Ocurrio un error al agregar el Cambio");
-            $datosCambios = $cambio->read();
-            require_once('vistaCambio.php');
+            $datosDiademas = $diadema->read();
+            require_once('vistaDiadema.php');
         break;
         
         //////////////////////////////////////// Caso modify ////////////////////////////////////////
         case 'modify':
-            $datosCambio = $cambio->readOne($id_cambio);
+            $datosMarca = $marca->read();
+            $datosDiadema = $diadema->readOne($id_diadema);
             //$datoCambios = $Cambio->read();
-            if(is_array($datosCambio)){
-                require_once('formCambio.php');
+            if(is_array($datosDiadema)){
+                require_once('formDiadema.php');
             } else{
                 //$Cambio->message(0,"Ocurrio un error, el Cambio no exixte");
-                $datosCambios = $cambio->read();
-                require_once('vistaCambio.php');
+                $datosDiademas = $diadema->read();
+                require_once('vistaDiadema.php');
             }
         break;
 
         //////////////////////////////////////// Caso update ////////////////////////////////////////
         case 'update':
-            $datosCambio=$_POST;
-            $resultado=$cambio->update($datosCambio,$id_cambio);
+            $datosDiadema=$_POST;
+            $resultado=$diadema->update($datosDiadema,$id_diadema);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se modifco correctamente": "Ocurrio un error al modificar el Cambio");
-            $datosCambios = $cambio->read();
-            require_once('vistaCambio.php');
+            $datosDiademas = $diadema->read();
+            require_once('vistaDiadema.php');
         break;
 
         //////////////////////////////////////// Caso delete ////////////////////////////////////////
         case 'delete':
-            $resultado = $cambio->delete($id_cambio);
+            $resultado = $diadema->delete($id_diadema);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se elimino correctamente": "Ocurrio un error al eliminar el Cambio");
         
         //////////////////////////////////////// Caso default ////////////////////////////////////////
         default:
-            $datosCambios = $cambio->read();
-            require_once('vistaCambio.php');
+            $datosDiademas = $diadema->read();
+            require_once('vistaDiadema.php');
     }
-
-
     //require_once('../../../Componentes/footer.php');
-
-
 ?>

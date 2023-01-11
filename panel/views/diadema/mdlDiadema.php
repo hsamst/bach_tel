@@ -1,20 +1,25 @@
 <?php
     require_once('../../sistemas.php');
 
-    class Cambio extends Sistema{
-        public $id_cambio;
+    class Diadema extends Sistema{
+        public $id_diadema;
         public $descripcion;
+        public $id_marca;
 
-        public function getId_cambio(){
-            return $this->id_cambio;
+
+        public function getId_diadema()
+        {
+                return $this->id_diadema;
         }
- 
-        public function setId_cambio($id_cambio){
-                $this->id_cambio = $id_cambio;
+
+        public function setId_diadema($id_diadema)
+        {
+                $this->id_diadema = $id_diadema;
+
                 return $this;
         }
 
-        public function getdDescripcion(){
+        public function getDescripcion(){
             return $this->descripcion;
         }
 
@@ -23,64 +28,87 @@
             return $this;
         }
 
+        public function getId_marca(){
+            return $this->id_marca;
+        }
+ 
+        public function setId_marca($id_marca){
+                $this->id_marca = $id_marca;
+                return $this;
+        }
+
+       
+
+
         //////////////////////////////////////// Metodos CRUD ////////////////////////////////////////
 
 
         //////////////////////////////////////// Metodo read ////////////////////////////////////////
         public function read(){
             $this->conexion();
-            $sql = "SELECT id_cambio, 
-                     descripcion
-                     FROM cambios;";
+            $sql = "SELECT d.id_diadema, 
+                     d.descripcion,
+                     (ma.nombre_marca) as marca 
+                     FROM diadema d
+                     INNER JOIN marca ma on ma.id_marca=d.id_marca;";
             $stmt = $this->con->prepare($sql);
             $stmt->execute();
-            $datosCambios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $datosCambios; 
+            $datosDiademas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $datosDiademas; 
         }
 
         //////////////////////////////////////// Metodo read One ////////////////////////////////////////
-        public function readOne($id_cambio){
+        public function readOne($id_diadema){
             $this->conexion();
-            $sql = "SELECT descripcion  
-                        from cambios
-                        WHERE id_cambio = :id_cambio;";
+            $sql = "SELECT d.id_diadema,
+                           d.descripcion, 
+                           (ma.nombre_marca) as marca  
+                        from diadema d
+                        INNER JOIN marca ma on ma.id_marca=d.id_marca
+                        WHERE d.id_diadema = :id_diadema;";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':id_cambio', $id_cambio, PDO::PARAM_INT);
+            $stmt -> bindParam(':id_diadema', $id_diadema, PDO::PARAM_INT);
             $stmt->execute();
-            $datosCambio = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $datosCambio = (isset($datosCambio[0]))?$datosCambio[0]:null;
-            return $datosCambio;
+            $datosDiadema = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $datosDiadema = (isset($datosDiadema[0]))?$datosDiadema[0]:null;
+            return $datosDiadema;
         }
 
         //////////////////////////////////////// Metodo Create ////////////////////////////////////////
-        public function create($datosCambio){
+        public function create($datosDiadema){
             $this->conexion();
-            $sql = "INSERT INTO cambios (descripcion) VALUES (:descripcion)"; 
+            $sql = "INSERT INTO diadema (id_diadema, descripcion, id_marca) VALUES (:id_diadema, :descripcion, :id_marca)"; 
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':descripcion', $datosCambio['descripcion'], PDO::PARAM_STR);
+            $stmt -> bindParam(':id_diadema', $datosDiadema['id_diadema'], PDO::PARAM_INT);
+            $stmt -> bindParam(':descripcion', $datosDiadema['descripcion'], PDO::PARAM_STR);
+            $stmt -> bindParam(':id_marca', $datosDiadema['id_marca'], PDO::PARAM_INT);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
         }
 
         //////////////////////////////////////// Metodo Update ////////////////////////////////////////
-        public function update($datosCambio, $id_cambio){
+        public function update($datosDiadema, $id_diadema){
             $this->conexion();
-            $sql = "UPDATE cambios set 
-                    descripcion = :descripcion 
-                    WHERE id_cambio = :id_cambio";
+            $sql = "UPDATE diadema set 
+                    id_diadema = :id_diadema,
+                    descripcion = :descripcion,
+                    id_marca = :id_marca
+                    WHERE id_diadema = :id_diadema";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':descripcion', $datosCambio['descripcion'], PDO::PARAM_STR);
-            $stmt -> bindParam(':id_cambio', $id_cambio, PDO::PARAM_INT);
+            $stmt -> bindParam(':id_diadema', $datosDiadema ['id_diadema'], PDO::PARAM_INT);
+            $stmt -> bindParam(':descripcion', $datosDiadema['descripcion'], PDO::PARAM_STR);
+            $stmt -> bindParam(':id_marca', $datosDiadema['id_marca'], PDO::PARAM_INT);
+            $stmt -> bindParam(':id_diadema', $id_diadema, PDO::PARAM_INT);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
         }
 
         //////////////////////////////////////// Metodo Delete ////////////////////////////////////////
-        public function delete($id_cambio){
+        public function delete($id_diadema){
             $this->conexion();
-            $sql = "DELETE FROM cambios WHERE id_cambio = :id_cambio";
+            $sql = "DELETE FROM diadema WHERE id_diadema = :id_diadema";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':id_cambio', $id_cambio, PDO::PARAM_INT);
+            $stmt -> bindParam(':id_diadema', $id_diadema, PDO::PARAM_INT);
             $rs = $stmt->execute();
             return $stmt->rowCount();
         }
@@ -88,5 +116,5 @@
 
     //////////////////////////////////////// Metodos CRUD ////////////////////////////////////////
 
-    $cambio = new Cambio();
+    $diadema = new Diadema();
 ?>
