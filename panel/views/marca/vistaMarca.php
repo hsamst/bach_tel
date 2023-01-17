@@ -1,13 +1,12 @@
+<section class="page-content" style="text-align:center;">
 <h1> ¡Cambio! </h1>
-<a href="ctrlMarca.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo Marca</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Opciones</th>
+            <td scope="col">#</td>
+            <td scope="col">Nombre</td>
+            <td scope="col">Modelo</td>
+            <td scope="col">Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -23,8 +22,10 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlMarca.php?accion=modify&id_marca=<?php echo $datosMarca['id_marca']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlMarca.php?accion=delete&id_marca=<?php echo $datosMarca['id_marca']; ?>">Eliminar</a></i>
+                    <a href="ctrlMarca.php?accion=modify&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                    <a href="ctrlMarca.php?accion=delete&id_marca=<?php echo $datosMarca['id_marca']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
                 </div>
                 </td>
 
@@ -36,3 +37,5 @@
 
         </tbody> 
                 </table>
+                <a href="ctrlMarca.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Marca</a>
+            </section>

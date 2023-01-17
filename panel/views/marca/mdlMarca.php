@@ -58,7 +58,7 @@
             $this->conexion();
             $sql = "SELECT m.id_marca,
                            m.nombre_marca, 
-                           (mo.tipo_modelo) as modelo  
+                           mo.tipo_modelo  
                         from marca m
                         INNER JOIN modelo mo on mo.id_modelo=m.id_modelo
                         WHERE m.id_marca = :id_marca;";

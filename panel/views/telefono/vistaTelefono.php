@@ -1,16 +1,15 @@
-<h1> ¡Cambio! </h1>
-<a href="ctrlTelefono.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo Telefono</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<section class="page-content" style="text-align:center;">
+    <h1> ¡Telefono! </h1>
+    <table>
         <thead>
             <tr>
-            <th scope="col">imei</th>
-            <th scope="col">Linea</th>
-            <th scope="col">Accesorios</th>
-            <th scope="col">Marca</th>
-            <th scope="col">ICCID</th>
-            <th scope="col">Plan</th>
-            <th scope="col">Opciones</th>
+                <td scope="col">imei</td>
+                <td scope="col">Linea</td>
+                <td scope="col">Accesorios</td>
+                <td scope="col">Marca</td>
+                <td scope="col">ICCID</td>
+                <td scope="col">Plan</td>
+                <td scope="col">Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -20,21 +19,27 @@
             ?>
 
             <tr>
-            <td><?php echo $datosTelefono['imei'] ?></td>
-            <td><?php echo $datosTelefono['linea'] ?></td>
-            <td><?php echo $datosTelefono['accesosrios'] ?></td>
-            <td><?php echo $datosTelefono['marca'] ?></td>
-            <td><?php echo $datosTelefono['iccid'] ?></td>
-            <td><?php echo $datosTelefono['plan'] ?></td>
-                <td>  
+                <td><?php echo $datosTelefono['imei'] ?></td>
+                <td><?php echo $datosTelefono['linea'] ?></td>
+                <td><?php echo $datosTelefono['accesosrios'] ?></td>
+                <td><?php echo $datosTelefono['marca'] ?></td>
+                <td><?php echo $datosTelefono['iccid'] ?></td>
+                <td><?php echo $datosTelefono['plan'] ?></td>
+                <td>
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlTelefono.php?accion=modify&imei=<?php echo $datosTelefono['imei']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlTelefono.php?accion=delete&imei=<?php echo $datosTelefono['imei']; ?>">Eliminar</a></i>
-                </div>
+                        <a href="ctrlTelefono.php?accion=modify&imei=<?php echo $datosTelefono['imei']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i
+                                    class="bi bi-pencil"></i></button></a>
+                        <a href="ctrlTelefono.php?accion=delete&imei=<?php echo $datosTelefono['imei']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i
+                                    class="bi bi-trash"></i></button></a>
+                    </div>
                 </td>
             </tr>
             <?php
                 endforeach;
             ?>
-        </tbody> 
-                </table>
+        </tbody>
+    </table>
+    <a href="ctrlTelefono.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Telefono</a>
+</section>

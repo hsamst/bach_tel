@@ -8,7 +8,7 @@
         $accion = $_GET['accion'];
     }
 
-    //require_once('../../../Componentes/headerAdmin.php');
+    require_once('../../../componentes/header.php');
 
     switch($accion){
         
@@ -71,6 +71,6 @@
             require_once('vistaSim.php');
     }
 
-    //require_once('../../../Componentes/footer.php');
+    require_once('../../../componentes/footer.php');
 
 ?>

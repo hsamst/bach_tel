@@ -12,7 +12,7 @@
         $accion = $_GET['accion'];
     }
 
-    //require_once('../../../Componentes/headerAdmin.php');
+    require_once('../../../Componentes/header.php');
 
     switch($accion){
         
@@ -80,5 +80,5 @@
             $datosTelefonos = $telefono->read();
             require_once('vistaTelefono.php');
     }
-    //require_once('../../../Componentes/footer.php');
+    require_once('../../../componentes/footer.php');
 ?>

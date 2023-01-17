@@ -62,7 +62,7 @@
             $this->conexion();
             $sql = "SELECT d.id_diadema,
                            d.descripcion, 
-                           (ma.nombre_marca) as marca  
+                           (ma.nombre_marca) as nombre_marca  
                         from diadema d
                         INNER JOIN marca ma on ma.id_marca=d.id_marca
                         WHERE d.id_diadema = :id_diadema;";

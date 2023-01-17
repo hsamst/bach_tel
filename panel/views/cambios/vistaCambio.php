@@ -1,12 +1,11 @@
-<h1> ¡Cambio! </h1>
-<a href="ctrlCambio.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo Cambio</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<section class="page-content" style="text-align:center;">
+    <div class="text">¡Cambio!</div>
+    <table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Opciones</th>
+                <td>#</td>
+                <td>Descripcion</td>
+                <td>Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -16,14 +15,16 @@
             ?>
 
             <tr>
-            <td><?php echo $datosCambio['id_cambio'] ?></td>
-            <td><?php echo $datosCambio['descripcion'] ?></td>
+                <td><?php echo $datosCambio['id_cambio'] ?></td>
+                <td><?php echo $datosCambio['descripcion'] ?></td>
 
-                <td>  
+                <td>
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlCambio.php?accion=modify&id_cambio=<?php echo $datosCambio['id_cambio']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlCambio.php?accion=delete&id_cambio=<?php echo $datosCambio['id_cambio']; ?>">Eliminar</a></i>
-                </div>
+                        <a href="ctrlCambio.php?accion=modify&id_cambio=<?php echo $datosCambio['id_cambio']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                        <a href="ctrlCambio.php?accion=delete&id_cambio=<?php echo $datosCambio['id_cambio']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
+                    </div>
                 </td>
 
             </tr>
@@ -32,5 +33,7 @@
                 endforeach;
             ?>
 
-        </tbody> 
-                </table>
+        </tbody>
+    </table>
+    <a href="ctrlCambio.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cambio</a>
+</section>

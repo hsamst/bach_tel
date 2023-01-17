@@ -1,16 +1,14 @@
-<h1> ¡SIM! </h1>
-<a href="ctrlSim.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo SIM</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
-        <thead>
+<<section class="page-content" style="text-align:center;">
+    <div class="text">¡Sim!</div>
+<table>
+    <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Region</th>
-            <th scope="col">Opciones</th>
+            <td scope="col">#</td>
+            <td scope="col">Region</td>
+            <td scope="col">Opciones</td>
             </tr>
         </thead>
         <tbody>
-
             <?php
                 foreach ($datosSims as $key => $datosSim):
             ?>
@@ -21,8 +19,10 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlSim.php?accion=modify&iccid=<?php echo $datosSim['iccid']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlSim.php?accion=delete&iccid=<?php echo $datosSim['iccid']; ?>">Eliminar</a></i>
+                    <a href="ctrlSim.php?accion=modify&iccid=<?php echo $datosSim['iccid']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                    <a href="ctrlSim.php?accion=delete&iccid=<?php echo $datosSim['iccid']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
                 </div>
                 </td>
 
@@ -34,3 +34,5 @@
 
         </tbody> 
                 </table>
+                <a href="ctrlSim.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Sim</a>
+</section>

@@ -33,11 +33,11 @@
                                     <option selected>Marca</option>
                                     <?php foreach ($datosMarca as $key => $value): 
                                     $selected = "";
-                                    if($value['marca'] == $datosDiadema['nombre_marca']):
+                                    if($value['nombre_marca'] == $datosDiadema['nombre_marca']):
                                       $selected = "selected";
                                     endif;
                                   ?>
-                                    <option value="<?php echo $value['nombre_marca'];?>" <?php echo $selected; ?>>
+                                    <option value="<?php echo $value['id_marca'];?>" <?php echo $selected; ?>>
                                         <?php echo $value['nombre_marca']?>
                                     </option>
                                     <?php endforeach; ?>

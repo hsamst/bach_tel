@@ -131,10 +131,10 @@
                      (ma.nombre_marca) as marca,
                      s.iccid,
                      (p.nombre) as plan
-                     FROM telefono t
+                     FROM telefonos t
                      INNER JOIN marca ma on ma.id_marca=t.id_marca
-                     INNER JOIN sim s on s.iccid=t.iccid,
-                     INNER JOIN plan_datos p on p.id_plan=t.id_plan;";
+                     INNER JOIN sim s on s.iccid=t.iccid
+                     INNER JOIN plan_datos p on p.id_plan=t.id_plan";
             $stmt = $this->con->prepare($sql);
             $stmt->execute();
             $datosTelefonos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -150,11 +150,11 @@
                             (ma.nombre_marca) as marca,
                             s.iccid,
                             (p.nombre) as plan
-                            FROM telefono t
+                            FROM telefonos t
                         INNER JOIN marca ma on ma.id_marca=t.id_marca
-                        INNER JOIN sim s on s.iccid=t.iccid,
+                        INNER JOIN sim s on s.iccid=t.iccid
                         INNER JOIN plan_datos p on p.id_plan=t.id_plan
-                        WHERE m.imei = :imei;";
+                        WHERE t.imei = :imei;";
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
             $stmt->execute();
@@ -166,10 +166,21 @@
         //////////////////////////////////////// Metodo Create ////////////////////////////////////////
         public function create($datosTelefono){
             $this->conexion();
-            $sql = "INSERT INTO telefono (imei, linea, accesosrios, id_marca, iccid, id_plan) VALUES (:imei, :linea, :accesosrios, :id_marca, :iccid, :id_plan)"; 
+            $sql = "INSERT INTO telefonos (imei, 
+                                          linea, 
+                                          accesosrios, 
+                                          id_marca, 
+                                          iccid, 
+                                          id_plan) 
+                           VALUES (:imei, 
+                                   :linea, 
+                                   :accesosrios, 
+                                   :id_marca, 
+                                   :iccid, 
+                                   :id_plan)"; 
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_INT);
-            $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_INT);
+            $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_STR);
             $stmt -> bindParam(':accesosrios', $datosTelefono['accesosrios'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_marca', $datosTelefono['id_marca'], PDO::PARAM_INT);
             $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_INT);
@@ -181,7 +192,7 @@
         //////////////////////////////////////// Metodo Update ////////////////////////////////////////
         public function update($datosTelefono, $imei){
             $this->conexion();
-            $sql = "UPDATE telefono set 
+            $sql = "UPDATE telefonos set 
                     imei = :imei,
                     linea = :linea,
                     accesosrios = :accesosrios,
@@ -191,7 +202,7 @@
                     WHERE imei = :imei";
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_INT);
-            $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_INT);
+            $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_STR);
             $stmt -> bindParam(':accesosrios', $datosTelefono['accesosrios'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_marca', $datosTelefono['id_marca'], PDO::PARAM_INT);
             $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_INT);
@@ -204,7 +215,7 @@
         //////////////////////////////////////// Metodo Delete ////////////////////////////////////////
         public function delete($imei){
             $this->conexion();
-            $sql = "DELETE FROM telefono WHERE imei = :imei";
+            $sql = "DELETE FROM telefonos WHERE imei = :imei";
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
             $rs = $stmt->execute();

@@ -1,13 +1,12 @@
-<h1> ¡Plan de datos! </h1>
-<a href="ctrlPlan.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo Plan de datos</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<section class="page-content" style="text-align:center;">
+    <div class="text">¡Plan de datos!</div>
+    <table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Opciones</th>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+                <td>Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -17,15 +16,19 @@
             ?>
 
             <tr>
-            <td><?php echo $datosPlan['id_plan'] ?></td>
-            <td><?php echo $datosPlan['nombre'] ?></td>
-            <td><?php echo $datosPlan['descripcion'] ?></td>
+                <td><?php echo $datosPlan['id_plan'] ?></td>
+                <td><?php echo $datosPlan['nombre'] ?></td>
+                <td><?php echo $datosPlan['descripcion'] ?></td>
 
-                <td>  
+                <td>
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlPlan.php?accion=modify&id_plan=<?php echo $datosPlan['id_plan']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlPlan.php?accion=delete&id_plan=<?php echo $datosPlan['id_plan']; ?>">Eliminar</a></i>
-                </div>
+                        <a href="ctrlPlan.php?accion=modify&id_plan=<?php echo $datosPlan['id_plan']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i
+                                    class="bi bi-pencil"></i></button></a>
+                        <a href="ctrlPlan.php?accion=delete&id_plan=<?php echo $datosPlan['id_plan']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i
+                                    class="bi bi-trash"></i></button></a>
+                    </div>
                 </td>
 
             </tr>
@@ -34,5 +37,7 @@
                 endforeach;
             ?>
 
-        </tbody> 
-                </table>
+        </tbody>
+    </table>
+    <a href="ctrlPlan.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Plan</a>
+</section>

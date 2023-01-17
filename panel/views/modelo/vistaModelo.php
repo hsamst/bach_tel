@@ -1,12 +1,12 @@
-<h1> ¡Modelo! </h1>
+<section class="page-content" style="text-align:center;">
+<div class="text">¡Modelo!</div>
 <a href="ctrlModelo.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo modelo</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Opciones</th>
+            <td scope="col">#</td>
+            <td scope="col">Modelo</td>
+            <td scope="col">Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -21,11 +21,12 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlModelo.php?accion=modify&id_modelo=<?php echo $datosModelo['id_modelo']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlModelo.php?accion=delete&id_modelo=<?php echo $datosModelo['id_modelo']; ?>">Eliminar</a></i>
+                    <a href="ctrlModelo.php?accion=modify&id_modelo=<?php echo $datosModelo['id_modelo']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                    <a href="ctrlModelo.php?accion=delete&id_modelo=<?php echo $datosModelo['id_modelo']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
                 </div>
                 </td>
-
             </tr>
 
             <?php
@@ -34,3 +35,5 @@
 
         </tbody> 
                 </table>
+                <a href="ctrlModelo.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Modelo</a>
+            </section>
