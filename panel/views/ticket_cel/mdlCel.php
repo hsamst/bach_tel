@@ -1,7 +1,7 @@
 <?php
     require_once('../../sistemas.php');
 
-    class Telefono extends Sistema{
+    class Celular extends Sistema{
         public $imei;
         public $descripcion;
         public $fecha_entrega;
@@ -137,8 +137,8 @@
             INNER JOIN telefonos tel on tel.imei=t.imei;";
             $stmt = $this->con->prepare($sql);
             $stmt->execute();
-            $datosTelefonos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $datosTelefonos; 
+            $datosCels = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $datosCels; 
         }
 
         //////////////////////////////////////// Metodo read One ////////////////////////////////////////
@@ -158,15 +158,15 @@
             $stmt = $this->con->prepare($sql);
             $stmt -> bindParam(':id_ticket_cel', $id_ticket_cel, PDO::PARAM_INT);
             $stmt->execute();
-            $datosTelefono = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $datosTelefono = (isset($datosTelefono[0]))?$datosTelefono[0]:null;
-            return $datosTelefono;
+            $datosCel = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $datosCel = (isset($datosCel[0]))?$datosCel[0]:null;
+            return $datosCel;
         }
 
         //////////////////////////////////////// Metodo Create ////////////////////////////////////////
-        public function create($datosTelefono){
+        public function create($datosCel){
             $this->conexion();
-            $sql = "INSERT INTO telefonos (fecha_entrega, 
+            $sql = "INSERT INTO ticket_cel (fecha_entrega, 
                                           descripcion, 
                                           no_empleado, 
                                           imei,
@@ -177,44 +177,42 @@
                                    :imei,
                                    :id_cambio)"; 
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':fecha_entrega', $datosTelefono['fecha_entrega'], PDO::PARAM_STR);
-            $stmt -> bindParam(':descripcion', $datosTelefono['descripcion'], PDO::PARAM_STR);
-            $stmt -> bindParam(':no_empleado', $datosTelefono['no_empleado'], PDO::PARAM_INT);
-            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_STR);
-            $stmt -> bindParam(':id_cambio', $datosTelefono['id_cambio'], PDO::PARAM_INT);
+            $stmt -> bindParam(':fecha_entrega', $datosCel['fecha_entrega'], PDO::PARAM_STR);
+            $stmt -> bindParam(':descripcion', $datosCel['descripcion'], PDO::PARAM_STR);
+            $stmt -> bindParam(':no_empleado', $datosCel['no_empleado'], PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $datosCel['imei'], PDO::PARAM_STR);
+            $stmt -> bindParam(':id_cambio', $datosCel['id_cambio'], PDO::PARAM_INT);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
         }
 
         //////////////////////////////////////// Metodo Update ////////////////////////////////////////
-        public function update($datosTelefono, $imei){
+        public function update($datosCel, $id_ticket_cel){
             $this->conexion();
-            $sql = "UPDATE telefonos set 
-                    imei = :imei,
+            $sql = "UPDATE ticket_cel set 
                     fecha_entrega = :fecha_entrega,
                     descripcion = :descripcion,
                     no_empleado = :no_empleado,
+                    imei=:imei,
                     id_cambio = :id_cambio,
-                    id_ticket_cel = :id_ticket_cel
-                    WHERE imei = :imei";
+                    WHERE id_ticket_cel = :id_ticket_cel";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_INT);
-            $stmt -> bindParam(':fecha_entrega', $datosTelefono['fecha_entrega'], PDO::PARAM_STR);
-            $stmt -> bindParam(':descripcion', $datosTelefono['descripcion'], PDO::PARAM_STR);
-            $stmt -> bindParam(':no_empleado', $datosTelefono['no_empleado'], PDO::PARAM_INT);
-            $stmt -> bindParam(':id_cambio', $datosTelefono['id_cambio'], PDO::PARAM_INT);
-            $stmt -> bindParam(':id_ticket_cel', $datosTelefono['id_ticket_cel'], PDO::PARAM_INT);
-            $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
+            $stmt -> bindParam(':fecha_entrega', $datosCel['fecha_entrega'], PDO::PARAM_STR);
+            $stmt -> bindParam(':descripcion', $datosCel['descripcion'], PDO::PARAM_STR);
+            $stmt -> bindParam(':no_empleado', $datosCel['no_empleado'], PDO::PARAM_INT);
+            $stmt -> bindParam('imei', $datosCel['imei'], PDO::PARAM_STR);
+            $stmt -> bindParam(':id_cambio', $datosCel['id_cambio'], PDO::PARAM_INT);
+            $stmt -> bindParam(':id_ticket_cel', $id_ticket_cel, PDO::PARAM_INT);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
         }
 
         //////////////////////////////////////// Metodo Delete ////////////////////////////////////////
-        public function delete($imei){
+        public function delete($id_ticket_cel){
             $this->conexion();
-            $sql = "DELETE FROM telefonos WHERE imei = :imei";
+            $sql = "DELETE FROM ticket_cel WHERE id_ticket_cel = :id_ticket_cel";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
+            $stmt -> bindParam(':id_ticket_cel', $id_ticket_cel, PDO::PARAM_INT);
             $rs = $stmt->execute();
             return $stmt->rowCount();
         }
@@ -222,5 +220,5 @@
 
     //////////////////////////////////////// Metodos CRUD ////////////////////////////////////////
 
-    $telefono = new Telefono();
+    $celular = new Celular();
 ?>
