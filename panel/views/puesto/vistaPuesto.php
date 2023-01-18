@@ -1,13 +1,14 @@
-<h1> ¡Puesto! </h1>
-<a href="ctrlPuesto.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo puesto</a>
+<section class="page-content" style="text-align:center;">
+    <div class="text">¡Puesto!</div>
+    <a href="ctrlPuesto.php?accion=new" class="btn3 first3" style="float: right;"> Añadir una nueva Unidad de negocio</a>
 
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+    <table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Opciones</th>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
+            <td>Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -23,16 +24,17 @@
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>">Eliminar</a></i>
-                </div>
+                    <a href="ctrlPuesto.php?accion=modify&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                    <a href="ctrlPuesto.php?accion=delete&id_puesto=<?php echo $datosPuesto['id_puesto']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
+                    </div>
                 </td>
 
             </tr>
-
             <?php
                 endforeach;
             ?>
-
         </tbody> 
 </table>
+            </section>

@@ -1,5 +1,7 @@
 <section class="page-content" style="text-align:center;">
-    <div class="text">¡Cambio!</div>
+    <div class="text">¡Unidad de negocio!</div>
+    <a href="ctrlUn.php?accion=new" class="btn3 first3" style="float: right;"> Añadir una nueva Unidad de negocio</a>
+
     <table>
         <thead>
             <tr>
@@ -21,21 +23,16 @@
                 <td>
                     <div>
                         <a href="ctrlUn.php?accion=modify&id_un=<?php echo $datosUn['id_un']; ?>"><button
-                                id="btn2 first2" type="button" class="btn2 first2">Editar <i
-                                    class="bi bi-pencil"></i></button></a>
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
                         <a href="ctrlUn.php?accion=delete&id_un=<?php echo $datosUn['id_un']; ?>"><button
                                 id="btn3 first" type="button" class="btn first">Borrar <i
                                     class="bi bi-trash"></i></button></a>
                     </div>
                 </td>
-
             </tr>
-
             <?php
                 endforeach;
             ?>
-
         </tbody>
     </table>
-    <a href="ctrlUn.php?accion=new" class="btn3 first3" style="float: right;"> Añadir una nueva Unidad de negocio</a>
-</section>
+   </section>

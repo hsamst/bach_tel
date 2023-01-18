@@ -105,7 +105,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/Proyecto_Tel_Bach/panel/views/diadema/ctrlDiadema.php">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">Diadema</span>
                         </a>
@@ -140,12 +140,20 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">Usuario</span>
+                            <span class="text nav-text">Usuario Trabajador</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/Proyecto_Tel_Bach/panel/views/usuariobach/ctrlUsuarioB.php">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">Usuario Bach</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-link">
+                        <a href="/Proyecto_Tel_Bach/panel/views/puesto/ctrlPuesto.php">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">Puesto</span>
                         </a>
@@ -159,7 +167,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/Proyecto_Tel_Bach/panel/views/rol/ctrlRol.php">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">Rol</span>
                         </a>

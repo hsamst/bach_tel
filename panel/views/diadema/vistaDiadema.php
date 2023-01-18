@@ -1,33 +1,40 @@
-<h1> ¡Cambio! </h1>
-<a href="ctrlDiadema.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nueva Diadema</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<section class="page-content" style="text-align:center;">
+<h1> ¡Diademas! </h1>
+<table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Opciones</th>
+            <td scope="col">#</td>
+            <td scope="col">Descripcion</td>
+            <td scope="col">Marca</td>
+            <td scope="col">Opciones</td>
             </tr>
         </thead>
         <tbody>
+
             <?php
                 foreach ($datosDiademas as $key => $datosDiadema):
             ?>
             <tr>
             <td><?php echo $datosDiadema['id_diadema'] ?></td>
             <td><?php echo $datosDiadema['descripcion'] ?></td>
-            <td><?php echo $datosDiadema['marca'] ?></td>
+            <td><?php echo $datosDiadema['nombre_marca'] ?></td>
 
                 <td>  
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlDiadema.php?accion=modify&id_diadema=<?php echo $datosDiadema['id_diadema']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlDiadema.php?accion=delete&id_diadema=<?php echo $datosDiadema['id_diadema']; ?>">Eliminar</a></i>
+                    <a href="ctrlDiadema.php?accion=modify&id_diadema=<?php echo $datosDiadema['id_diadema']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
+                    <a href="ctrlDiadema.php?accion=delete&id_diadema=<?php echo $datosDiadema['id_diadema']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
                 </div>
                 </td>
+
             </tr>
+
             <?php
                 endforeach;
             ?>
+
         </tbody> 
                 </table>
+                <a href="ctrlDiadema.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Diadema</a>
+            </section>

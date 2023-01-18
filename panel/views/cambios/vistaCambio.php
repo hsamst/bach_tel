@@ -26,13 +26,10 @@
                                 id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
                     </div>
                 </td>
-
             </tr>
-
             <?php
                 endforeach;
             ?>
-
         </tbody>
     </table>
     <a href="ctrlCambio.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cambio</a>

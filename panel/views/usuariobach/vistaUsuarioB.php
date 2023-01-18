@@ -1,14 +1,14 @@
-<h1> ¡Usuario Bach! </h1>
-<a href="ctrlUsuarioB.php?accion=new" class="btn btn-primary" style="margin:30px"> Añadir nuevo usuarioBach</a>
-
-<table class="table" style=" background-color: rgba(0, 0, 0, 0.3); color: white" >
+<section class="page-content" style="text-align:center;">
+    <div class="text">¡Usuario Bach!</div>
+    <a href="ctrlUsuarioB.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo rol</a>
+    <table>
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Contrasena</th>
-            <th scope="col">Tocken</th>
-            <th scope="col">Opciones</th>
+                <td>#</td>
+                <td>Correo</td>
+                <td>Contrasena</td>
+                <td>Tocken</td>
+                <td>Opciones</td>
             </tr>
         </thead>
         <tbody>
@@ -18,20 +18,23 @@
             ?>
 
             <tr>
-            <td><?php echo $datosUsuarioB['id_usuario_bach'] ?></td>
-            <td><?php echo $datosUsuarioB['corrreo'] ?></td>
-            <td><?php echo $datosUsuarioB['contrasena'] ?></td>
-            <td><?php echo $datosUsuarioB['tocken'] ?></td>
+                <td><?php echo $datosUsuarioB['id_usuario_bach'] ?></td>
+                <td><?php echo $datosUsuarioB['corrreo'] ?></td>
+                <td><?php echo $datosUsuarioB['contrasena'] ?></td>
+                <td><?php echo $datosUsuarioB['tocken'] ?></td>
 
-                <td>  
+                <td>
                     <div>
-                    <i class="btn btn-success bi-pencil"><a href="ctrlUsuarioB.php?accion=modify&id_usuario_bach=<?php echo $datosUsuarioB['id_usuario_bach']; ?>">Modificar</a></i>
-                    <i class="btn btn-danger bi bi-trash"><a href="ctrlUsuarioB.php?accion=delete&id_usuario_bach=<?php echo $datosUsuarioB['id_usuario_bach']; ?>">Eliminar</a></i>
-                </div>
+                        <a href="ctrlUsuarioB.php?accion=modify&id_usuario_bach=<?php echo $datosUsuarioB['id_usuario_bach']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i
+                                    class="bi bi-pencil"></i></button></a>
+                        <a href="ctrlUsuarioB.php?accion=delete&id_usuario_bach=<?php echo $datosUsuarioB['id_usuario_bach']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i
+                                    class="bi bi-trash"></i></button></a>
+                    </div>
                 </td>
             </tr>
-            <?php
-                endforeach;
-            ?>
-        </tbody> 
-</table>
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</section>
