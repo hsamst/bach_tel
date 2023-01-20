@@ -15,22 +15,22 @@
         <tbody>
 
             <?php
-                foreach ($datosCels as $key => $datosCel):
+                foreach ($datosTicketCels as $key => $datosTicketCel):
             ?>
 
             <tr>
-                <td><?php echo $datosCel['id_ticket_cel'] ?></td>
-                <td><?php echo $datosCel['fecha_entrega'] ?></td>
-                <td><?php echo $datosCel['descripcion'] ?></td>
-                <td><?php echo $datosCel['no_empleado'] ?></td>
-                <td><?php echo $datosCel['imei'] ?></td>
-                <td><?php echo $datosCel['id_cambio'] ?></td>
+                <td><?php echo $datosTicketCel['id_ticket_cel'] ?></td>
+                <td><?php echo $datosTicketCel['fecha_entrega'] ?></td>
+                <td><?php echo $datosTicketCel['descripcion'] ?></td>
+                <td><?php echo $datosTicketCel['empleado'] ?></td>
+                <td><?php echo $datosTicketCel['imei'] ?></td>
+                <td><?php echo $datosTicketCel['cambio'] ?></td>
                 <td>
                     <div>
-                        <a href="ctrlCel.php?accion=modify&id_ticket_cel=<?php echo $datosCel['id_ticket_cel']; ?>"><button
+                        <a href="ctrlTicketCel.php?accion=modify&id_ticket_cel=<?php echo $datosTicketCel['id_ticket_cel']; ?>"><button
                                 id="btn2 first2" type="button" class="btn2 first2">Editar <i
                                     class="bi bi-pencil"></i></button></a>
-                        <a href="ctrlCel.php?accion=delete&id_ticket_cel=<?php echo $datosCel['id_ticket_cel']; ?>"><button
+                        <a href="ctrlTicketCel.php?accion=delete&id_ticket_cel=<?php echo $datosTicketCel['id_ticket_cel']; ?>"><button
                                 id="btn3 first" type="button" class="btn first">Borrar <i
                                     class="bi bi-trash"></i></button></a>
                     </div>
@@ -41,5 +41,5 @@
             ?>
         </tbody>
     </table>
-    <a href="ctrlCel.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cel</a>
+    <a href="ctrlTicketCel.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cel</a>
 </section>

@@ -1,84 +1,82 @@
 <?php
-    require_once('mdlTelefono.php');
-    require_once('../marca/mdlMarca.php');
-    require_once('../plan_datos/mdlPlan.php');
-    require_once('../sim/mdlSim.php');
+    require_once('mdlEmpleado.php');
+    require_once('../un/mdlUn.php');
+    require_once('../puesto/mdlPuesto.php');
 
     //$sistema -> validarRol('Administrador');
-    $imei = NULL;
+    $no_empleado = NULL;
     $accion = NULL;
     if(isset($_GET['accion'])){
-        $imei = isset($_GET['imei']) ? $_GET['imei'] : NULL;
+        $no_empleado = isset($_GET['no_empleado']) ? $_GET['no_empleado'] : NULL;
         $accion = $_GET['accion'];
     }
 
-    require_once('../../../Componentes/header.php');
+    require_once('../../../componentes/header.php');
 
     switch($accion){
         
          //////////////////////////////////////// Caso read One ////////////////////////////////////////
         case 'readOne':
-            $datosTelefono = $telefono->readOne($imei);
-            if(is_array($datosTelefono)){
-                require_once('views/telefono/vistaTelefono.php');
+            $datosEmpleado = $empleado->readOne($no_empleado);
+            if(is_array($datosEmpleado)){
+                require_once('views/empleado/vistaEmpleado.php');
             } else{
-                $telefono->message(0,"Ocurrio un error, el telefono no exixte");
-                require_once('formTelefono.php');
+                $Empleado->message(0,"Ocurrio un error, la Empleado no exixte");
+                require_once('formEmpleado.php');
             }
         break;
 
 
         //////////////////////////////////////// Caso New ////////////////////////////////////////
         case 'new':
-            $datosMarca = $marca->read();
-            $datosPlan = $plan->read();
-            $datosSim = $sim->read();
-            require_once('formTelefono.php');
+            $datosPuestos = $puesto->read();
+            $datosUNs = $un->read();
+            $datosEmpleado = $empleado->read();
+            require_once('formEmpleado.php');
         break;
 
         //////////////////////////////////////// Caso add ////////////////////////////////////////
         case 'add':
-            $datosTelefono = $_POST;
-            $resultado = $telefono->create($datosTelefono);
+            $datosEmpleado = $_POST;
+            $resultado = $empleado->create($datosEmpleado);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se agrego correctamente": "Ocurrio un error al agregar el Cambio");
-            $datosTelefonos = $telefono->read();
-            require_once('vistaTelefono.php');
+            $datosEmpleados = $empleado->read();
+            require_once('vistaEmpleado.php');
         break;
         
         //////////////////////////////////////// Caso modify ////////////////////////////////////////
         case 'modify':
-            $datosMarca = $marca->read();
-            $datosPlan = $plan->read();
-            $datosSim = $sim->read();
-            $datosTelefono = $telefono->readOne($imei);
+            $datosPuestos = $puesto->read();
+            $datosUNs = $un->read();
+            $datosEmpleado = $empleado->readOne($no_empleado);
             //$datoCambios = $Cambio->read();
-            if(is_array($datosTelefono)){
-                require_once('formTelefono.php');
+            if(is_array($datosEmpleado)){
+                require_once('formEmpleado.php');
             } else{
                 //$Cambio->message(0,"Ocurrio un error, el Cambio no exixte");
-                $datosTelefonos = $telefono->read();
-                require_once('vistaTelefono.php');
+                $datosEmpleados = $empleado->read();
+                require_once('vistaEmpleado.php');
             }
         break;
 
         //////////////////////////////////////// Caso update ////////////////////////////////////////
         case 'update':
-            $datosTelefono=$_POST;
-            $resultado=$telefono->update($datosTelefono,$imei);
+            $datosEmpleado=$_POST;
+            $resultado=$empleado->update($datosEmpleado,$no_empleado);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se modifco correctamente": "Ocurrio un error al modificar el Cambio");
-            $datosTelefonos = $telefono->read();
-            require_once('vistaTelefono.php');
+            $datosEmpleados = $empleado->read();
+            require_once('vistaEmpleado.php');
         break;
 
         //////////////////////////////////////// Caso delete ////////////////////////////////////////
         case 'delete':
-            $resultado = $telefono->delete($imei);
+            $resultado = $empleado->delete($no_empleado);
             //$Cambio->message($resultado, ($resultado)?"El Cambio se elimino correctamente": "Ocurrio un error al eliminar el Cambio");
         
         //////////////////////////////////////// Caso default ////////////////////////////////////////
         default:
-            $datosTelefonos = $telefono->read();
-            require_once('vistaTelefono.php');
+            $datosEmpleados = $empleado->read();
+            require_once('vistaEmpleado.php');
     }
     require_once('../../../componentes/footer.php');
 ?>

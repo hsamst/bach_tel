@@ -1,6 +1,6 @@
 <section class="page-content">
     <form class="form" style="text-align:center" method="POST"
-        action="ctrlCel.php?accion=<?php echo(isset($id_ticket_cel))? "update&id_ticket_cel=".$id_ticket_cel: "add"; ?>"
+        action="ctrlTicketCel.php?accion=<?php echo(isset($id_ticket_cel))? "update&id_ticket_cel=".$id_ticket_cel: "add"; ?>"
         enctype="multipart/form-data" id="msform">
         <h2 class="fs-title">
             <?php echo(isset($id_ticket_cel))? "Modifica a tu ": " Introduce tu nevo ";?>Telefono</h2>
@@ -8,27 +8,23 @@
         <div class="row">
             <div class="col">
                 <div class="input-group mb-2">
-                    <p type="Fecha entrega"><input style="width:300px" type="text" name="fecha_entrega"
-                            value="<?php echo(isset($fecha_entrega)) ? $datosCel['fecha_entrega']:"";?>" class="form-control"
-                            id="inlineFormInputGroup" placeholder="fecha_entrega" />
-                    </p>
                     <p type="Descripcion">
                         <input style="width:300px" type="text" name="descripcion"
-                            value="<?php echo(isset($id_ticket_cel)) ? $datosCel['descripcion']:"";?>" class="form-control"
+                            value="<?php echo(isset($id_ticket_cel)) ? $datosTicketCel['descripcion']:"";?>" class="form-control"
                             id="inlineFormInputGroup" placeholder="descripcion" />
                     </p>
-                    <p type="Marca">
+                    <p type="Empleado">
                         <select style="width:300px" class="custom-select" id="validatedInputGroupSelect" name="no_empleado"
                             required>
-                            <option selected>Marca</option>
-                            <?php foreach ($datosUs as $key => $value): 
+                            <option selected>Empleado</option>
+                            <?php foreach ($datosEmpleado as $key => $value): 
                                     $selected = "";
-                                    if($value['empleado'] == $datosCel['empleado']):
+                                    if($value['nombre_completo'] == $datosTicketCel['empleado']):
                                       $selected = "selected";
                                     endif;
                                   ?>
                             <option value="<?php echo $value['no_empleado'];?>" <?php echo $selected; ?>>
-                                <?php echo $value['empleado']?>
+                                <?php echo $value['nombre_completo']?>
                             </option>
                             <?php endforeach; ?>
                         </select>
@@ -37,9 +33,9 @@
                         <select style="width:300px" class="custom-select" id="validatedInputGroupSelect" name="imei"
                             required>
                             <option selected>ICCID</option>
-                            <?php foreach ($datosTelefono as $key => $value): 
+                            <?php foreach ($datosTelefonos as $key => $value): 
                                     $selected = "";
-                                    if($value['imei'] == $datosCel['imei']):
+                                    if($value['imei'] == $datosTicketCel['imei']):
                                       $selected = "selected";
                                     endif;
                                   ?>
@@ -53,14 +49,14 @@
                         <select style="width:300px" class="custom-select" id="validatedInputGroupSelect" name="id_cambio"
                             required>
                             <option selected>Cambio</option>
-                            <?php foreach ($datosCambio as $key => $value): 
+                            <?php foreach ($datosCambios as $key => $value): 
                                     $selected = "";
-                                    if($value['cambio'] == $datosCel['cambio']):
+                                    if($value['descripcion'] == $datosTicketCel['cambio']):
                                       $selected = "selected";
                                     endif;
                                   ?>
                             <option value="<?php echo $value['id_cambio'];?>" <?php echo $selected; ?>>
-                                <?php echo $value['cambio']?>
+                                <?php echo $value['descripcion']?>
                             </option>
                             <?php endforeach; ?>
                         </select>

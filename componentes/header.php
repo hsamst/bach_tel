@@ -93,7 +93,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/Proyecto_Tel_Bach/panel/views/ticket_cel/ctrlTicketCel.php">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Ticket Cel</span>
                         </a>
@@ -126,7 +126,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/Proyecto_Tel_Bach/panel/views/ticket_diadema/ctrlTicketDiadema.php">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Ticket Diadema</span>
                         </a>
