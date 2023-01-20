@@ -12,8 +12,8 @@
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
+    --primary-color-light: #f7fff5;
+    --toggle-color: rgb(221, 221, 221);
     --text-color: #707070;
 
     /* ====== Transition ====== */
