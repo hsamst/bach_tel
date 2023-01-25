@@ -18,6 +18,10 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Dashboard Sidebar Menu</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="/Proyecto_Tel_Bach/js/grafica.js"></script>
+    <script type="text/javascript" src="/Proyecto_Tel_Bach/js/graficaA.js"></script>
+
 </head>
 
 <body>

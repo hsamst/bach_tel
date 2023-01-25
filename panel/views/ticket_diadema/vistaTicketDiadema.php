@@ -24,10 +24,18 @@
                 <td><?php echo $datosTicketDiadema['id_diadema'] ?></td>
                 <td>
                     <div>
-                        <a href="ctrlTicketDiadema.php?accion=modify&id_ticket_diadema=<?php echo $datosTicketDiadema['id_ticket_diadema']; ?>"><button
-                                id="btn2 first2" type="button" class="btn2 first2">Editar <i class="bi bi-pencil"></i></button></a>
-                        <a href="ctrlTicketDiadema.php?accion=delete&id_ticket_diadema=<?php echo $datosTicketDiadema['id_ticket_diadema']; ?>"><button
-                                id="btn3 first" type="button" class="btn first">Borrar <i class="bi bi-trash"></i></button></a>
+                        <a
+                            href="ctrlTicketDiadema.php?accion=modify&id_ticket_diadema=<?php echo $datosTicketDiadema['id_ticket_diadema']; ?>"><button
+                                id="btn2 first2" type="button" class="btn2 first2">Editar <i
+                                    class="bi bi-pencil"></i></button></a>
+                        <a
+                            href="ctrlTicketDiadema.php?accion=delete&id_ticket_diadema=<?php echo $datosTicketDiadema['id_ticket_diadema']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Borrar <i
+                                    class="bi bi-trash"></i></button></a>
+                        <a
+                            href="pdfdiadema.php"><button
+                                id="btn3 first" type="button" class="btn first">Resguardo <i
+                                    class="bi bi-trash"></i></button></a>
                     </div>
                 </td>
             </tr>

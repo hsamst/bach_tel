@@ -1,4 +1,5 @@
 <?php
+    require '../../../vendor/autoload.php';
     require_once('mdlTicketDiadema.php');
     require_once('../empleado/mdlEmpleado.php');
     require_once('../diadema/mdlDiadema.php');

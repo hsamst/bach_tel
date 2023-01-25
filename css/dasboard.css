@@ -292,7 +292,7 @@ body.dark .switch::before{
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
-.page-content .text{
+.page-content .text {
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
@@ -309,7 +309,7 @@ body.dark .page-content .text{
 }
 
 /* Contenido */
-.page-content {
+.page-content{
     position: relative;
     left: 220px;
     width: calc(100% - 220px);
@@ -318,3 +318,7 @@ body.dark .page-content .text{
     /* color: var(--page-content-txtColor);
     background: var(--page-content-bgColor); */
   }
+  .grafica{
+    padding: 12px 60px;
+}
+  
