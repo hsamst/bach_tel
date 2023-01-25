@@ -35,7 +35,7 @@
                         <a
                             href="pdfdiadema.php"><button
                                 id="btn3 first" type="button" class="btn first">Resguardo <i
-                                    class="bi bi-trash"></i></button></a>
+                                class="bi bi-file-earmark-pdf"></i></button></a>
                     </div>
                 </td>
             </tr>

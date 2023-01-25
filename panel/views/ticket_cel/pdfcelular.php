@@ -23,60 +23,64 @@
         <tbody>
             <tr>
                 <td><b>Tipo de equipo</b></td>
-                <td><b>Movil</b></td>
+                <td>Movil</td>
             </tr>
             <tr>
                 <td><b>Linea</b></td>
-                <td><p>'.$datosResguardo['linea'].'</p></td>
+                <td>'.$datosResguardo['linea'].'</td>
             </tr>
             <tr>
                 <td><b>Plan de datos</b></td>
-                <td><p>'.$datosResguardo['plan'].'</p></td>
+                <td>'.$datosResguardo['plan'].'</td>
             </tr>
             <tr>
                 <td><b>Marca</b></td>
-                <td><p>'.$datosResguardo['marca'].'</p></td>
+                <td>'.$datosResguardo['marca'].'</td>
             </tr>
             <tr>
                 <td><b>Modelo</b></td>
-                <td><p>'.$datosResguardo['modelo'].'</p></td>
+                <td>'.$datosResguardo['modelo'].'</td>
             </tr>
             <tr>
                 <td><b>IMEI</b></td>
-                <td><p>'.$datosResguardo['imei'].'</p></td>
+                <td>'.$datosResguardo['imei'].'</td>
             </tr>
             <tr>
                 <td><b>SIM_ID</b></td>
-                <td><p>'.$datosResguardo['sim_id'].'</p></td>
+                <td>'.$datosResguardo['sim_id'].'</td>
             </tr>
             <tr>
                 <td><b>Accesorios</b></td>
-                <td><p>'.$datosResguardo['accesosrios'].'</p></td>
+                <td>'.$datosResguardo['accesosrios'].'</td>
             </tr>
         </tbody>
     </table>
     </p>
-    <br /><br />
+    <br />
     <b>Datos del usuario responsable del Equipo:</b>
     <p>
-    <table style="border: 2px solid black; border-collapse: collapse" border="2" width="100%">
+    <table style="border: 2px solid black; border-collapse: collapse" border="1" width="100%">
         <tbody>
             <tr>
                 <td><b>Nombre</b></td>
+                <td>'.$datosResguardo['nombre'].'</td>
             </tr>
             <tr>
                 <td><b>Puesto</b></td>
+                <td>'.$datosResguardo['puesto'].'</td>
             </tr>
             <tr>
                 <td><b>No. Empleado</b></td>
+                <td>'.$datosResguardo['no_empleado'].'</td>
             </tr>
             <tr>
                 <td><b>UN</b></td>
+                <td>'.$datosResguardo['un'].'</td>
             </tr>
         </tbody>
     </table>
     </p>
-    <br /><br /> <br />
+    <br />
     <p>Estoy enterado de que el equipo y servicio que se me entrega es para uso exclusivo de la compañía por lo que no está permitido hacer uso de servicios de audio, video o cualquier otra aplicación de contenido no productivo o no laboral, independientemente de su formato. Está prohibido participar en juegos o promociones vía electrónica ajenas a la operación del negocio así como contratar servicios adicionales o descarga de tonos o música (ringtones) con cargo a la cuenta o factura del teléfono.
     En caso de excedentes o uso de servicios no permitidos, extravío o mal uso del equipo, autorizo a la Empresa a la cual pertenezco, proceder a descontar el importe total del excedente y/o reposición del equipo vía nomina en una sola exhibición. 
     </p>
