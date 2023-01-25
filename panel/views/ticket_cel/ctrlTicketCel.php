@@ -1,4 +1,5 @@
 <?php
+require '../../../vendor/autoload.php';
     require_once('mdlTicketCel.php');
     require_once('../empleado/mdlEmpleado.php');
     require_once('../telefono/mdlTelefono.php');
@@ -69,6 +70,11 @@
             $datosTicketCels = $ticketCel->read();
             require_once('vistaTicketCel.php');
         break;
+        case 'ticket':
+            $datospdfTc=$ticketCel->ticket($id_ticket_cel);
+            $url="pdfcelular.php";
+            echo"<a href='$url'></a>";
+            break;
 
         //////////////////////////////////////// Caso delete ////////////////////////////////////////
         case 'delete':
@@ -76,6 +82,7 @@
             //$Cambio->message($resultado, ($resultado)?"El Cambio se elimino correctamente": "Ocurrio un error al eliminar el Cambio");
         
         //////////////////////////////////////// Caso default ////////////////////////////////////////
+        
         default:
             $datosTicketCels = $ticketCel->read();
             require_once('vistaTicketCel.php');

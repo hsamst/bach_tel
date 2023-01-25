@@ -33,6 +33,10 @@
                         <a href="ctrlTicketCel.php?accion=delete&id_ticket_cel=<?php echo $datosTicketCel['id_ticket_cel']; ?>"><button
                                 id="btn3 first" type="button" class="btn first">Borrar <i
                                     class="bi bi-trash"></i></button></a>
+                                    <a
+                            href="ctrlPDF.php?accion=ticket&id_ticket_cel=<?php echo $datosTicketCel['id_ticket_cel']; ?>"><button
+                                id="btn3 first" type="button" class="btn first">Resguardo <i
+                                    class="bi bi-trash"></i></button></a>
                     </div>
                 </td>
             </tr>
