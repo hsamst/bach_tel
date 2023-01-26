@@ -1,5 +1,8 @@
 <section class="page-content" style="text-align:center;">
 <h1> ¡Cambio! </h1>
+<a href="ctrlMarca.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Marca</a>
+<a href="./excelMarca.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
+                       
 <table>
         <thead>
             <tr>
@@ -37,5 +40,4 @@
 
         </tbody> 
                 </table>
-                <a href="ctrlMarca.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Marca</a>
-            </section>
+                </section>
