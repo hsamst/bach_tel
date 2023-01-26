@@ -1,6 +1,7 @@
 <section class="page-content" style="text-align:center;">
     <div class="text">¡Empleado!</div>
     <a href="ctrlEmpleado.php?accion=new" class="btn3 first3" style="float: right;"> Añadir una nueva Unidad de negocio</a>
+    <a href="./excelEmpleado.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
 
     <table>
         <thead>

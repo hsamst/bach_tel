@@ -1,6 +1,8 @@
 <<section class="page-content" style="text-align:center;">
     <div class="text">¡Sim!</div>
-<table>
+    <a href="ctrlSim.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Sim</a>
+    <a href="./excelSim.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
+    <table>
     <thead>
             <tr>
             <td scope="col">#</td>
@@ -34,5 +36,4 @@
 
         </tbody> 
                 </table>
-                <a href="ctrlSim.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Sim</a>
-</section>
+                </section>

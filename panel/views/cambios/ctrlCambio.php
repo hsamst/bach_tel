@@ -70,9 +70,5 @@
             $datosCambios = $cambio->read();
             require_once('vistaCambio.php');
     }
-
-
     require_once('../../../componentes/footer.php');
-
-
 ?>

@@ -1,5 +1,7 @@
 <section class="page-content" style="text-align:center;">
     <div class="text">¡Cambio!</div>
+    <a href="ctrlCambio.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cambio</a>
+    <a href="./excelCambios.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
     <table>
         <thead>
             <tr>
@@ -32,5 +34,4 @@
             ?>
         </tbody>
     </table>
-    <a href="ctrlCambio.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cambio</a>
-</section>
+    </section>

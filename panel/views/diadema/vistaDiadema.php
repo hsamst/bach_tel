@@ -1,5 +1,8 @@
 <section class="page-content" style="text-align:center;">
 <h1> ¡Diademas! </h1>
+<a href="ctrlDiadema.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Diadema</a>
+<a href="./excelDiadema.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
+
 <table>
         <thead>
             <tr>
@@ -36,5 +39,4 @@
 
         </tbody> 
                 </table>
-                <a href="ctrlDiadema.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Diadema</a>
-            </section>
+                </section>
