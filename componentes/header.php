@@ -28,19 +28,13 @@
     <nav class="sidebar close">
         <header>
             <div class="image-text">
+            <a href="/Proyecto_Tel_Bach/panel/views/index.php">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="/Proyecto_Tel_Bach/images/bachoco_logo.jpeg" alt="">
                 </span>
-
-                <div class="text logo-text">
-                    <span class="name">Codinglab</span>
-                    <span class="profession">Web developer</span>
-                </div>
             </div>
-
             <i class='bx bx-chevron-right toggle'></i>
         </header>
-
         <div class="menu-bar">
             <div class="menu">
 
@@ -56,50 +50,50 @@
                     </li>
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/marca/ctrlMarca.php">
-                            <i class="bi bi-android2"></i>
-                            <i class="bi bi-apple"></i>
+                            <i id="ico" class="bi bi-android2"></i>
+                            <i id="ico" class="bi bi-apple"></i>
                             <span class="text nav-text">Marca</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/modelo/ctrlModelo.php">
-                        <i class="bi bi-tag"></i>
+                        <i id="ico" class="bi bi-tag"></i>
                             <span class="text nav-text">Modelo</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/telefono/ctrlTelefono.php">
-                        <i class="bi bi-phone"></i>
+                        <i id="ico" class="bi bi-phone"></i>
                             <span class="text nav-text">Celular</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/sim/ctrlSim.php">
-                        <i class="bi bi-sim"></i>
+                        <i id="ico" class="bi bi-sim"></i>
                             <span class="text nav-text">Sim</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/plan_datos/ctrlPlan.php">
-                        <i class="bi bi-file-bar-graph"></i>
+                        <i id="ico" class="bi bi-file-bar-graph"></i>
                             <span class="text nav-text">Plan Datos</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/cambios/ctrlCambio.php">
-                        <i class="bi bi-phone-flip"></i>
+                        <i id="ico" class="bi bi-phone-flip"></i>
                             <span class="text nav-text">Cambios</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/ticket_cel/ctrlTicketCel.php">
-                        <i class="bi bi-ticket"></i>
+                        <i  id="ico" class="bi bi-ticket"></i>
                             <span class="text nav-text">Ticket Cel</span>
                         </a>
                     </li>
@@ -111,88 +105,83 @@
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/diadema/ctrlDiadema.php">
-                        <i class="bi bi-headphones"></i>
+                        <i id="ico" class="bi bi-headphones"></i>
                             <span class="text nav-text">Diadema</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/marca/ctrlMarca.php">
-                        <i class="bi bi-android2"></i>
-                            <i class="bi bi-apple"></i>
+                        <i id="ico" class="bi bi-android2"></i>
+                            <i id="ico" class="bi bi-apple"></i>
                             <span class="text nav-text">Marca</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/modelo/ctrlModelo.php">
-                        <i class="bi bi-tag"></i>
+                        <i id="ico" class="bi bi-tag"></i>
                             <span class="text nav-text">Modelo</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/ticket_diadema/ctrlTicketDiadema.php">
-                        <i class="bi bi-ticket"></i>
+                        <i id="ico" class="bi bi-ticket"></i>
                             <span class="text nav-text">Ticket Diadema</span>
                         </a>
                     </li>
-
-                    <a href="/Proyecto_Tel_Bach/panel/views/empleado/ctrlEmpleado.php">
+                    <li class="menu-links">
                     <i class="bi bi-people-fill"></i>
+                            <span class="text nav-text">Personal</span>
+                        </a></li>
+                        
+                        <li class="nav-link">
+                        <a href="/Proyecto_Tel_Bach/panel/views/empleado/ctrlEmpleado.php">
+                        <i id="ico" class="bi bi-people-fill"></i>
                             <span class="text nav-text">Empleados</span>
                         </a>
-
+                    </li>
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/usuariobach/ctrlUsuarioB.php">
-                        <i class="bi bi-person-badge"></i>
+                        <i id="ico" class="bi bi-person-badge"></i>
                             <span class="text nav-text">Usuario Adm</span>
                         </a>
                     </li>
-
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/usubach_rol/crtlUsu_rol.php">
-                        <i class="bi bi-person-lock"></i>
-                            <span class="text nav-text">Usuario con Rol</span>
+                        <i id="ico" class="bi bi-credit-card-2-front-fill"></i>
+                            <span class="text nav-text">Asignacion Permisos</span>
                         </a>
                     </li>
 
-
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/puesto/ctrlPuesto.php">
-                        <i class="bi bi-person-exclamation"></i>
+                        <i id="ico" class="bi bi-person-exclamation"></i>
                             <span class="text nav-text">Puesto</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/un/ctrlUn.php">
-                        <i class="bi bi-building-fill"></i>
+                        <i id="ico" class="bi bi-building-fill"></i>
                             <span class="text nav-text">Unidad Negocio</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="/Proyecto_Tel_Bach/panel/views/rol/ctrlRol.php">
-                        <i class="bi bi-arrow-left-right"></i>
+                        <i id="ico" class="bi bi-arrow-left-right"></i>
                             <span class="text nav-text">Rol</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                        <i class="bi bi-credit-card-2-front-fill"></i>
-                            <span class="text nav-text">Asignacion Permisos</span>
-                        </a>
-                    </li>
-
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon'></i>
+                        <i id="ico" class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
                 </li>

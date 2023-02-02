@@ -33,9 +33,9 @@
                                 id="btn3 first" type="button" class="btn first">Borrar <i
                                     class="bi bi-trash"></i></button></a>
                         <a
-                            href="pdfdiadema.php"><button
-                                id="btn3 first" type="button" class="btn first">Resguardo <i
-                                class="bi bi-file-earmark-pdf"></i></button></a>
+                            href="ctrlPDFdia.php?accion=ticket&id_ticket_diadema=<?php echo $datosTicketDiadema['id_ticket_diadema']; ?>"><button
+                                id="btn3 first" type="button" class="btn first" >Resguardo <i
+                                 class="bi bi-file-earmark-pdf"></i></button></a>
                     </div>
                 </td>
             </tr>
