@@ -1,5 +1,6 @@
 <section class="page-content" style="text-align:center;">
     <h1>¡Datos para la carta de resguardo Diadema!</h1>
+    <a href="ctrlTicketDiadema.php?accion=new" class="btn3 first3" style="float: left;"> Añadir nueva Diadema</a>
     <table>
         <thead>
             <tr>
@@ -44,5 +45,5 @@
             ?>
         </tbody>
     </table>
-    <a href="ctrlTicketDiadema.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nueva Diadema</a>
+    
 </section>

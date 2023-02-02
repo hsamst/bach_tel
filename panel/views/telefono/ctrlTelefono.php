@@ -12,7 +12,7 @@
         $accion = $_GET['accion'];
     }
 
-    require_once('../../../Componentes/header.php');
+    require_once('../../../componentes/header.php');
 
     switch($accion){
         

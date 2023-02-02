@@ -156,7 +156,7 @@
                         INNER JOIN plan_datos p on p.id_plan=t.id_plan
                         WHERE t.imei = :imei;";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $imei, PDO::PARAM_STR);
             $stmt->execute();
             $datosTelefono = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $datosTelefono = (isset($datosTelefono[0]))?$datosTelefono[0]:null;
@@ -179,11 +179,11 @@
                                    :iccid, 
                                    :id_plan)"; 
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_STR);
             $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_STR);
             $stmt -> bindParam(':accesosrios', $datosTelefono['accesosrios'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_marca', $datosTelefono['id_marca'], PDO::PARAM_INT);
-            $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_INT);
+            $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_plan', $datosTelefono['id_plan'], PDO::PARAM_INT);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
@@ -201,13 +201,13 @@
                     id_plan = :id_plan
                     WHERE imei = :imei";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $datosTelefono['imei'], PDO::PARAM_STR);
             $stmt -> bindParam(':linea', $datosTelefono['linea'], PDO::PARAM_STR);
             $stmt -> bindParam(':accesosrios', $datosTelefono['accesosrios'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_marca', $datosTelefono['id_marca'], PDO::PARAM_INT);
-            $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_INT);
+            $stmt -> bindParam(':iccid', $datosTelefono['iccid'], PDO::PARAM_STR);
             $stmt -> bindParam(':id_plan', $datosTelefono['id_plan'], PDO::PARAM_INT);
-            $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $imei, PDO::PARAM_STR);
             $rs = $stmt->execute();
             return  $stmt->rowCount();
         }
@@ -217,7 +217,7 @@
             $this->conexion();
             $sql = "DELETE FROM telefonos WHERE imei = :imei";
             $stmt = $this->con->prepare($sql);
-            $stmt -> bindParam(':imei', $imei, PDO::PARAM_INT);
+            $stmt -> bindParam(':imei', $imei, PDO::PARAM_STR);
             $rs = $stmt->execute();
             return $stmt->rowCount();
         }

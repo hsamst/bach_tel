@@ -194,6 +194,28 @@ a:link, a:visited {
   color: #fff;
   outline: 0;
 }
+#forguardar{
+  width: 150px;
+  height: auto;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #2eff04;
+  border-radius: 0.6em;
+  color: #ff2a04;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
 
 .first {
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -242,15 +264,15 @@ a:link, a:visited {
 }
 
 .btn3 {
-  width: 290px;
+  width: 250px;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: #6457f9 2px solid;
+  border: #4ada1e 3px solid;
   border-radius: 0.6em;
-  color:#6457f9;;
+  color:#4adb3d;;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
@@ -274,7 +296,7 @@ a:link, a:visited {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 .first3:hover {
-  box-shadow: 0 0 40px 40px #6457f9 inset;
+  box-shadow: 0 0 40px 40px #eb8d21 inset;
 }
 /* Botones */
 

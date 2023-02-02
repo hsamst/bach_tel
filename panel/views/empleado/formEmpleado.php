@@ -53,7 +53,7 @@
         </div>
         <br />
         <br />
-        <input class="btn btn-primary" type="submit" value="Guardar" />
+        <input class="btn3 first3" type="submit" value="Guardar" />
 
     </form>
 </section>
