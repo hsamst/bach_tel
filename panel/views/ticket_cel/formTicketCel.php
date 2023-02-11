@@ -3,7 +3,7 @@
         action="ctrlTicketCel.php?accion=<?php echo(isset($id_ticket_cel))? "update&id_ticket_cel=".$id_ticket_cel: "add"; ?>"
         enctype="multipart/form-data" id="msform">
         <h2 class="fs-title">
-            <?php echo(isset($id_ticket_cel))? "Modifica a tu ": " Introduce tu nevo ";?>Telefono</h2>
+            <?php echo(isset($id_ticket_cel))? "Modifica a tu ": " Introduce nuevo ";?>Ticket</h2>
         <br />
         <div class="row">
             <div class="col">

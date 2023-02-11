@@ -1,5 +1,5 @@
 <section class="page-content" style="text-align:center;">
-    <div class="text">¡Plan de datos!</div>
+    <div class="text">Plan de datos</div>
     <a href="ctrlPlan.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Plan</a>
     <a href="./excelPlan.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
     <table>

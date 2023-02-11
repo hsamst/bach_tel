@@ -34,41 +34,47 @@ $DiademaRobo=$graficas->roboDia();
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-    <style>.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-.one {
-  grid-column: 1 / 2;
-  grid-row: 1;
-  height: 300px;
-}
-.two {
-  grid-column: 2 / 2;
-  grid-row: 1 ;
-  height: 300px;
-}
-.three {
-  grid-column: 3/1;
-  grid-row: 2 ;
-  height: 500px;
-  padding: 30px
-}
-.one2 {
-  grid-column: 1 / 2;
-  grid-row: 3;
-  background-color:blue;
-  height: 300px;
-}
-.two2 {
-  grid-column: 2 / 2;
-  grid-row: 3 ;
-  background-color:green;
-  height: 300px;
-}
-</style>
+    <style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .one {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        height: 300px;
+    }
+
+    .two {
+        grid-column: 2 / 2;
+        grid-row: 1;
+        height: 300px;
+    }
+
+    .three {
+        grid-column: 3/1;
+        grid-row: 2;
+        height: 500px;
+        padding: 30px
+    }
+
+    .one2 {
+        grid-column: 1 / 2;
+        grid-row: 3;
+        background-color: blue;
+        height: 300px;
+    }
+
+    .two2 {
+        grid-column: 2 / 2;
+        grid-row: 3;
+        background-color: green;
+        height: 300px;
+    }
+    </style>
 
     <title>Dashboard Sidebar Menu</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -110,7 +116,7 @@ $DiademaRobo=$graficas->roboDia();
     function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-            [ 'Nuevo', 'Nuevo', 'Dano Usuario', 'Daño Equipo', 'Reposicion', 'Robo'],
+            ['Nuevo', 'Nuevo', 'Dano Usuario', 'Daño Equipo', 'Reposicion', 'Robo'],
             <?php echo "[2,".$DiademaNuevo[0]['nuevo'].", ".$DiademaDaUs[0]['Dano_Usuario'].", ".$DiademaDanEq[0]['Dano_Equipo'].", ".$DiademaRepo[0]['reposicion'].",".$DiademaRobo[0]['robo']."]"?>
         ]);
 
@@ -310,42 +316,46 @@ $DiademaRobo=$graficas->roboDia();
             </div>
         </div>
     </nav>
-    <section class="page-content">
-
-    <div class="wrapper">
-  <div class="one"><div id="donutchart" style="width: 90%; height: 100%; margin-left:50px"></div></div>
-  <div class="two"><div id="chart_div" style="width: 90%; height: 100%; margin-left:50px"></div></div>
-  <div class="three"><div><table style = "height=500px;">
-        <thead>
-            <tr>
-                <td>id_ticket_cel</td>
-                <td>Fecha de entrega</td>
-                <td>Descripcion</td>
-                <td>No. empleado</td>
-                <td>imei</td>
-                <td>id_cambio</td>
-            </tr>
-        </thead>
-        <tbody>
-
-            <?php
-                foreach ($datosTicketCels as $key => $datosTicketCel):
-            ?>
-
-            <tr>
-                <td><?php echo $datosTicketCel['id_ticket_cel'] ?></td>
-                <td><?php echo $datosTicketCel['fecha_entrega'] ?></td>
-                <td><?php echo $datosTicketCel['descripcion'] ?></td>
-                <td><?php echo $datosTicketCel['empleado'] ?></td>
-                <td><?php echo $datosTicketCel['imei'] ?></td>
-                <td><?php echo $datosTicketCel['cambio'] ?></td>
-            </tr>
-            <?php
+    <section class="page-content" style="text-align:center">
+        <h1 text="center">BIENVENIDO</h1>
+        <div class="wrapper">
+            <div class="one">
+                <div id="donutchart" style="width: 90%; height: 100%; margin-left:50px"></div>
+            </div>
+            <div class="two">
+                <div id="chart_div" style="width: 90%; height: 100%; margin-left:50px"></div>
+            </div>
+            <div class="three">
+                <div>
+                    <table style="height=500px;">
+                        <thead>
+                            <tr>
+                                <td>id_ticket_cel</td>
+                                <td>Fecha de entrega</td>
+                                <td>Descripcion</td>
+                                <td>No. empleado</td>
+                                <td>imei</td>
+                                <td>id_cambio</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($datosTicketCels as $key => $datosTicketCel):?>
+                            <tr>
+                                <td><?php echo $datosTicketCel['id_ticket_cel'] ?></td>
+                                <td><?php echo $datosTicketCel['fecha_entrega'] ?></td>
+                                <td><?php echo $datosTicketCel['descripcion'] ?></td>
+                                <td><?php echo $datosTicketCel['empleado'] ?></td>
+                                <td><?php echo $datosTicketCel['imei'] ?></td>
+                                <td><?php echo $datosTicketCel['cambio'] ?></td>
+                            </tr>
+                            <?php
                 endforeach;
             ?>
-        </tbody>
-    </table></div></div>
-</div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
         <!-- <div id="donutchart" style="width: 90%; height: 100%; margin-left:50px"></div>
         </br>
@@ -404,4 +414,5 @@ $DiademaRobo=$graficas->roboDia();
     <!-- Script para las tablas con paginacion -->
 
 </body>
+
 </html>

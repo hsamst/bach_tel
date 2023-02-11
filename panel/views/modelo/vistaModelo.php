@@ -1,5 +1,5 @@
 <section class="page-content" style="text-align:center;">
-<div class="text">¡Modelo!</div>
+<div class="text">Modelos</div>
 <a href="ctrlModelo.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Modelo</a>
 <a href="./excelModelo.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
 

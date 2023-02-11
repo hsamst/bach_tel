@@ -1,5 +1,5 @@
 <section class="page-content" style="text-align:center;">
-    <h1> ¡Datos para la carta de resguardo! </h1>
+<div class="text">Datos para la carta de resguardo </div>
     <a href="ctrlTicketCel.php?accion=new" class="btn3 first3" style="float: right;"> Añadir nuevo Cel</a>
     <a href="./excelTicketCel.php" class="btn3 first3" style="float: right;"> Descarga en excel</a>
 

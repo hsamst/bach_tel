@@ -15,7 +15,7 @@ body {
   .login-text {
     width: 800px;
     height: 450px;
-    background: linear-gradient(to left, #ab68ca, #de67a3);
+    background: linear-gradient(to left, rgb(247, 173, 63), #f07220);
     position: absolute;
     top: -300px;
     box-sizing: border-box;

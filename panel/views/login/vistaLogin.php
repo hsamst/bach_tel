@@ -4,7 +4,7 @@
   <div class="login-text">
         <button class="cta"><i class="fas fa-chevron-down fa-1x"></i></button>
         
-        <div class="text">
+        <div class="text" >
         <form method="POST" action="ctrlLogin.php?accion=login"enctype="multipart/form-data">
             <a href="">Login</a>
             <hr>
@@ -16,12 +16,9 @@
             <input id="btnIngre" class="login-btn" type="submit" value="Ingresar" />
             </form>
         </div>
-
     </div>
 
-    <div class="call-text">
-        <h1>Show us your <span>creative</span> side</h1>
-        <button>Join the Community</button>
+    <div class="call-text" style=" background-image: url(/Proyecto_Tel_Bach/images/Anuncio.png); background-repeat: no-repeat, repeat; background-size: cover; height: 80%">
     </div>
 
 </div>
